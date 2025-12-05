@@ -1,0 +1,52 @@
+Part 2: Case Study Analysis (40%)
+Case 1: Biased Hiring Tool (Amazon)
+Source of Bias:
+
+Training data bias: Model learned from historical hiring data dominated by male candidates, reinforcing gender stereotypes.
+Feature engineering: Resumes containing gender-associated terms (e.g., “women’s”) were implicitly penalized.
+Proposed Fixes:
+
+Debias training data: Remove gendered language, balance gender representation via synthetic oversampling.
+Adversarial debiasing: Train a classifier to predict gender from outputs and subtract that signal during model training (using AIF360).
+Human-in-the-loop review: Flag high-impact decisions (e.g., rejections) for human auditor review.
+Fairness Metrics for Evaluation:
+
+Equal Opportunity Difference: Ensure true positive rates are similar across genders.
+Disparate Impact Ratio: Ratio of selection rates (should be ≥ 0.8).
+Average Odds Difference: Balance false positive and true positive rate differences.
+
+
+Case 2: Facial Recognition in Policing
+Ethical Risks:
+Wrongful arrests: Higher false positive rates for Black individuals (e.g., Robert Williams’ 2020 arrest) erode trust in law enforcement.
+Privacy violations: Mass surveillance without consent chills free expression.
+Reinforcement of systemic racism: Biased data → biased policing → more biased data (feedback loop).
+Policy Recommendations:
+
+Ban use in real-time public surveillance (as in EU AI Act’s “unacceptable risk” category).
+Mandate third-party bias audits using diverse test sets (e.g., NIST FRVT benchmarks).
+Require judicial warrants for facial recognition searches.
+Public transparency logs: Disclose accuracy rates by demographic subgroup.
+Part 3: Practical Audit (25%)
+COMPAS Dataset Fairness Audit
+Code available in accompanying Jupyter Notebook (compas_audit.ipynb) on GitHub.
+
+Key Steps:
+
+Loaded COMPAS dataset (race: African-American vs. Caucasian).
+Used StructuredDataClassifier to predict recidivism.
+Applied AIF360 metrics:
+Disparate Impact: 0.72 (below 0.8 threshold → biased)
+False Positive Rate Difference: 0.19 (African-Americans falsely labeled high-risk 19% more often)
+Visualized with plot module: bar charts showing prediction disparities.
+Findings Summary (300 words):
+Our audit confirms significant racial bias in COMPAS risk scores. African-American defendants are 1.75x more likely to be falsely classified as high-risk than Caucasian defendants (FPR: 45% vs. 23%). The Disparate Impact ratio of 0.72 violates the 80% rule used in U.S. anti-discrimination law. This aligns with ProPublica’s 2016 analysis, indicating the algorithm fails the equalized odds fairness criterion.
+
+Remediation Steps:
+
+Pre-processing: Reweight training samples to balance error rates across groups (using Reweighing in AIF360).
+In-processing: Retrain with AdversarialDebiasing to remove race-correlated signals.
+Post-processing: Apply EqOddsPostprocessing to adjust decision thresholds per group.
+Operational: Never use risk scores as sole determinant for bail/sentencing; require human review and contextual factors.
+Fairness is not a one-time fix—it requires continuous monitoring, diverse development teams, and stakeholder input from affected communities.
+
