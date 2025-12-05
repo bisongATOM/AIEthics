@@ -1,0 +1,36 @@
+Algorithmic bias refers to systematic and unfair discrimination in AI system outputs, often resulting from skewed training data, flawed model design, or societal inequities embedded in historical patterns.
+Examples:
+Hiring Algorithms: Amazon’s AI recruiting tool downgraded resumes containing words like “women’s” (e.g., “women’s chess club captain”) because it was trained on resumes submitted over 10 years—mostly from men.
+Healthcare Allocation: An algorithm used in U.S. hospitals prioritized healthier white patients over sicker Black patients for care management programs because it used past healthcare spending as a proxy for health needs—a metric biased by systemic underfunding of Black patients’ care.
+
+
+Q2: Transparency vs. Explainability in AI
+Transparency means making the AI system’s purpose, data sources, limitations, and decision logic publicly accessible (e.g., documentation, data sheets).
+Explainability refers to the technical ability to interpret or justify individual predictions (e.g., “Why was this loan denied?”).
+Why both matter:
+
+Transparency builds public trust and enables oversight.
+Explainability empowers affected individuals to contest decisions and ensures accountability.
+Without transparency, explainability tools may be hidden; without explainability, transparency remains superficial.
+
+
+
+Q3: GDPR’s Impact on AI in the EU
+GDPR (Articles 13–15, 22) requires:
+
+Right to explanation: Individuals can request meaningful information about automated decisions affecting them.
+Data minimization & purpose limitation: AI systems must use only necessary data for specified purposes.
+Prohibition of fully automated decisions with legal/significant effects unless explicit consent is given or safeguards exist.
+This forces developers to build interpretable models, conduct Data Protection Impact Assessments (DPIAs), and implement user consent mechanisms—slowing deployment but increasing trust.
+Ethical Principles Matching
+Principle
+Definition
+A) Justice
+Fair distribution of AI benefits and risks.
+B) Non-maleficence
+Ensuring AI does not harm individuals or society.
+C) Autonomy
+Respecting users’ right to control their data and decisions.
+D) Sustainability
+Designing AI to be environmentally friendly.
+(Aligned with EU Ethics Guidelines for Trustworthy AI)
