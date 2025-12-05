@@ -1,0 +1,25 @@
+In a past university project, we built a mental health chatbot using NLP. Initially, we used public social media data without explicit consent. After this course, I now recognize this violated autonomy and non-maleficence.
+
+Moving forward, I will:
+
+Use only consented, anonymized clinical datasets (e.g., DAIC-WOZ).
+Implement bias probes for gender, race, and age in sentiment analysis.
+Add user control: “Explain this response” and “Opt out of data logging.”
+Conduct ethics reviews before deployment.
+Ethical AI isn’t optional—it’s foundational to building tools that heal, not harm.
+
+Bonus Task: Ethical AI in Healthcare Policy Proposal
+Title: Guidelines for Ethical AI Deployment in Clinical Settings
+
+Patient Consent Protocols
+AI use must be disclosed during informed consent.
+Patients may opt out without affecting standard care.
+Data used for AI training requires explicit, granular consent (GDPR-compliant).
+Bias Mitigation Strategies
+Audit models quarterly using AIF360 across age, race, gender, and socioeconomic status.
+Require diverse training data (minimum representation thresholds).
+Validate performance on underrepresented subgroups before FDA approval.
+Transparency Requirements
+Provide plain-language explanations for AI-assisted diagnoses.
+Maintain public model cards detailing accuracy, limitations, and uncertainty.
+Clinicians must document when AI influenced a decision in patient records.
